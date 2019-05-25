@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Errors.h"
-#include "Tree.h"
+#include "Map.h"
 using namespace std;
 
 int main()
@@ -17,7 +17,7 @@ int main()
 		try
 		{
 			system("cls");
-			cout << "0-output map\n1-insert\n2-remove\n3-clear\n4-get_keys \n5-insert\n6-at\n7-remove\n8-get_size\n9-clear\n10-set\n11-isEmpty\n\n12-Exit\n";
+			cout << "0-output map\n1-insert\n2-remove\n3-clear\n4-get_keys\n5-get values\n6-find_value\n\n7-Exit\n";
 			cin >> menu;
 			switch (menu)
 			{
@@ -32,15 +32,10 @@ int main()
 				map.insert(5, 'a');
 				map.insert(7, 'b');
 				map.insert(3, 'b');
-				cout << map.get_size();
-				system("pause");
+				map.output_map();
+				cout << map.get_size()<<endl;
 				break;
 			case 2: // remove
-				/*map.insert(4, 'a');
-				map.insert(45, 'a');
-				map.insert(6, 'a');
-				map.remove(6);
-				cout << map.get_size();*/
 				map.insert(20, 'q');
 				map.insert(10, 'b');
 				map.insert(30, 'a');
@@ -49,62 +44,48 @@ int main()
 				map.remove(10);
 				
 				map.output_map();
-				cout << map.get_size();
-				system("pause");
+				cout << map.get_size()<<endl;
 				break;
-			case 3:
+			case 3: // clear
 				map.insert(5, 'a');
 				map.insert(7, 'a');
 				map.clear();
-				cout << map.get_size();
-				system("pause");
+				cout << map.get_size()<<endl;
 				break;
 			case 4://get_keys
 				for (int i = 0; i < 8; i++)
 				{
 					map.insert(i, 'a' + i);
 				}
+				map.output_map();
 				keys_list = *map.get_keys();
 				cout << keys_list.get_size() << endl;
 				for (size_t i = 1; i < 9; i++)
 				{
 					cout << i << " : " << keys_list.at(i) << endl;
 				}
-				system("pause");
 				break;
 			case 5://get_values
 				for (int i = 0; i < 8; i++)
 				{
 					map.insert(i, 'a' + i);
 				}
+				map.output_map();
 				values_list = *map.get_values();
 				cout << values_list.get_size() << endl;
 				for (size_t i = 1; i < 9; i++)
 				{
 					cout << i << " : " << values_list.at(i) << endl;
 				}
-				system("pause");
 				break;
-			case 6:
-				
-				break;
-			case 7:
-				
-				break;
-			case 8:
-				
-				break;
-			case 9:
-				
-				break;
-			case 10:
-				
-				break;
-			case 11:
-				
-				break;
-			case 12:
-
+			case 6://find_value
+				for (int i = 0; i < 8; i++)
+				{
+					map.insert(i, 'a' + i);
+				}
+				map.output_map();
+				data = map.find_value(1);
+				cout << "data at 1: " << data << endl;
 				break;
 			default:
 				break;
@@ -119,6 +100,6 @@ int main()
 			cout << a.what();
 		}
 		system("pause");
-	} while (menu != 12);
+	} while (menu != 7);
 	return 0;
 }

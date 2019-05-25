@@ -117,7 +117,7 @@
   <ItemGroup>
     <ClInclude Include="Errors.h" />
     <ClInclude Include="List.h" />
-    <ClInclude Include="Tree.h" />
+    <ClInclude Include="Map.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

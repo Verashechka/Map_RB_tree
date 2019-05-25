@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Tree.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Errors.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="List.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

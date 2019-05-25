@@ -20,11 +20,10 @@ class list
 {
 private:
 	list_element<T>*tail;
-	
-public:
-	/*template<class T>	friend ostream& operator<< <T> (ostream&, list<T>&);*/
 	int size_of_list;
 	list_element<T>*head;
+public:
+	
 	list();
 	list(T user_data);
 	~list() { this->clear(); }
@@ -109,23 +108,3 @@ bool list<T>::is_empty()//returns true if list is empty else returns false
 {
 	return(!head);
 }
-
-//template<class T>
-//ostream& operator<< (ostream& output_stream, list<T> &lis)
-//{
-//	if (!lis.head)
-//		cout << "The list is empty\n";
-//	else
-//	{
-//		int i = 1;
-//		list_element<T>*current = lis.head;
-//		cout << "\n\nList:\n";
-//		while (current)
-//		{
-//			cout << i++ << ": " << current->data << "\n";
-//			current = current->next;
-//		}
-//		cout << endl;
-//	}
-//	return output_stream;
-//}
